@@ -44,7 +44,9 @@ function getCity(city) {
     return output
 }
 
-function fetchWeatherData(latitude, longitude){
+    const latitude = 40.7128
+    const longitude = -74.0060
+
     fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=cfef4754224d48a2b3f7b1cd3e8bad7d`)
     .then(res => res.json())
     .then(data => {
@@ -53,7 +55,7 @@ function fetchWeatherData(latitude, longitude){
         const sunset = data.data[0].sunset
         updateBackgroundImage(sunrise, sunset)
     })
-}
+
 
 function updateBackgroundImage(sunrise, sunset) {
 
@@ -73,17 +75,3 @@ if (now >= sunriseTime && now < sunsetTime) {
 
 
 }
-function getLocationAndFetchWeather() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            position => {
-                const latitude = position.coords.latitude
-                const longitude = position.coords.longitude
-                console.log('Latitude:', latitude)
-                console.log('Longitude:', longitude)
-
-                fetchWeatherData(latitude, longitude)
-            })
-    }
-}
-getLocationAndFetchWeather()
