@@ -14,7 +14,7 @@ findCity.addEventListener('submit', (event) =>{
 })
 
 function getCity(city) {
-    const weatherApiUrl = `https://api.weatherbit.io/v2.0/current?key=cfef4754224d48a2b3f7b1cd3e8bad7d&city=${city}`
+    const weatherApiUrl = `http://api.weatherbit.io/v2.0/current?key=cfef4754224d48a2b3f7b1cd3e8bad7d&city=${city}`
 
     const output = new Promise((resolve) => {
         fetch(weatherApiUrl)   
@@ -29,7 +29,7 @@ function getCity(city) {
                 sky.textContent = data.data[0].weather.description
                 const icon = data.data[0].weather.icon   
                 const skyImg = document.querySelector('#skyImg')  
-                skyImg.src = `https://www.weatherbit.io/static/img/icons/${icon}.png`  
+                skyImg.src = `http://www.weatherbit.io/static/img/icons/${icon}.png`  
                 const windSpd = document.querySelector('#windSpd')
                 windSpd.textContent = `Wind speed: ` + data.data[0].wind_spd
                 const humidity = document.querySelector('#humidity')
@@ -45,7 +45,7 @@ function getCity(city) {
 }
 
 function fetchWeatherData(latitude, longitude){
-    fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=cfef4754224d48a2b3f7b1cd3e8bad7d`)
+    fetch(`http://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=cfef4754224d48a2b3f7b1cd3e8bad7d`)
     .then(res => res.json())
     .then(data => {
 
