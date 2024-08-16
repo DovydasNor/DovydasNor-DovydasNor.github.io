@@ -65,7 +65,7 @@ const sunriseTime = new Date(now.toDateString() + ' ' + sunrise)
 const sunsetTime = new Date(now.toDateString() + ' ' + sunset)
 
 
-if (now >= sunriseTime && now < sunsetTime) {
+if (now >= sunriseTime || now < sunsetTime) {
 
     document.body.style.backgroundImage = 'url(img/cloud-shapes-with-blue-background.jpg)'
 } else {
