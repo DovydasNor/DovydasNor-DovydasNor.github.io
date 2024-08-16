@@ -31,7 +31,7 @@ function getCity(city) {
                 const skyImg = document.querySelector('#skyImg')  
                 skyImg.src = `https://www.weatherbit.io/static/img/icons/${icon}.png`  
                 const windSpd = document.querySelector('#windSpd')
-                windSpd.textContent = `Wind speed: ` + data.data[0].wind_spd
+                windSpd.textContent = `Wind speed: ` + data.data[0].wind_spd + ` m/s`
                 const humidity = document.querySelector('#humidity')
                 humidity.textContent = `Humidity: ` + data.data[0].rh
                 const sunRise = document.querySelector('#rise')
