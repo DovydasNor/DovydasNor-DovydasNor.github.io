@@ -44,8 +44,8 @@ function getCity(city) {
     return output
 }
 
-    const latitude = 40.7128
-    const longitude = -74.0060
+const latitude = 55.91139
+const longitude = 21.84417
 
     fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=cfef4754224d48a2b3f7b1cd3e8bad7d`)
     .then(res => res.json())
